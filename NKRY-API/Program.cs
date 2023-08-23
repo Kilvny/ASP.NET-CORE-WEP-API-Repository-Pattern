@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using NKRY_API.DataAccess.EFCore;
+using NKRY_API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ApplicationContext>(options => 
@@ -8,7 +9,9 @@ throw new InvalidOperationException("Connections string: NKRY-APIContext was not
 
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllers();
+// Add this service to the container to get run on runtime
+builder.Services.ConfigureUnitOfWork();
 
 var app = builder.Build();
 
@@ -34,6 +37,8 @@ app.UseAuthorization();
 // set up our api to use attribute based routing
 app.UseEndpoints(endpoints =>
 {
-    endpoints.MapControllers();});
+    endpoints.MapControllers();
+}
+);
 
 app.Run();
