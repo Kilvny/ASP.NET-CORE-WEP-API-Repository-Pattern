@@ -4,7 +4,7 @@ namespace NKRY_API.Domain.Contracts
 {
     public interface IGenericRepository<T> where T: class
     {
-        T GetById(int id);
+        T? GetById(int id);
         IEnumerable<T> GetAll();
         IEnumerable<T> FindByCondition(Expression<Func<T, bool>> expression);
         void Create(T entity);

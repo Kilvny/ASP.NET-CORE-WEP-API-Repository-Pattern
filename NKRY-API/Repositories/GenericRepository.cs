@@ -11,11 +11,10 @@ namespace NKRY_API.Repositories
         {
             _applicationContext = applicationContext;
         }
-        public T GetById(int id)
+        public T? GetById(int id)
         {
             return _applicationContext.Set<T>()
-                                      .Find(id) 
-                                      ?? throw new ArgumentException();
+                                      .Find(id);
         }
 
         public IEnumerable<T> GetAll()
