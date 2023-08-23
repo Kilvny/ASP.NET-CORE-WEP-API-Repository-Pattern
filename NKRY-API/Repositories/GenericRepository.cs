@@ -6,7 +6,7 @@ namespace NKRY_API.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T: class 
     {
-        protected ApplicationContext _applicationContext { get; set; };
+        protected ApplicationContext _applicationContext { get; set; }
         public GenericRepository(ApplicationContext applicationContext) 
         {
             _applicationContext = applicationContext;
