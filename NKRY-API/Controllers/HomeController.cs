@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using NKRY_API.Models;
+using NKRY_API.Domain.Entities;
 using System.Diagnostics;
 
 namespace NKRY_API.Controllers
@@ -26,7 +26,7 @@ namespace NKRY_API.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return NotFound();
         }
     }
 }
