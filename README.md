@@ -54,9 +54,10 @@ Before you begin, ensure you have the following:
     dotnet run
     ```
 
-    The API will be accessible at `https://localhost:5001`.
+    The API will be accessible at `https://localhost:{PORT}`.
 
 ## Understanding Repository Pattern and Unit of Work
+![Repositroy Pattern and Unit of Works](https://i0.wp.com/davidskyspace.com/wp-content/uploads/2022/02/UnitOfWork.png?fit=774%2C593&ssl=1) 
 
 In this starter project, the Repository Pattern is implemented using the Generic Repository to provide a structured and reusable way to interact with the data layer. The repositories encapsulate the logic for querying and manipulating entities while promoting code reusability. The Generic Repository abstracts away the common CRUD (Create, Read, Update, Delete) operations, reducing code duplication.
 
